@@ -22,7 +22,11 @@ export function ProfileBar() {
       bg='brandGray.50'
       borderBottom='1px solid'
       borderColor='gray.200'
-      _dark={{ bg: '#111', borderBottom: '1px solid #3F4753' }}
+      _dark={{
+        bg: '#111',
+        borderBottom: '1px solid',
+        borderColor: 'whiteAlpha.400',
+      }}
       onClick={() => {
         updateDefaultProps(true, 'media');
       }}

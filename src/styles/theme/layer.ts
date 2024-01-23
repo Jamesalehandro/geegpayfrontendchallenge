@@ -13,4 +13,15 @@ export const layerStyles = {
   start: {
     alignItems: 'flex-start',
   },
+  boxed: {
+    bg: 'white',
+    borderRadius: 14,
+    border: '1px solid',
+    borderColor: '#EDF2F7',
+    _dark: {
+      border: '1px solid',
+      bg: '#111',
+      borderColor: 'whiteAlpha.400',
+    },
+  },
 };

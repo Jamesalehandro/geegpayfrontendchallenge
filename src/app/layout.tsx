@@ -1,8 +1,8 @@
 import { Provider } from 'components/shared/Provider';
-import './globals.css';
 import type { Metadata } from 'next';
 import { plusJakarta } from 'styles/fonts';
 import { DashboardLayout } from 'layout/DashboardLayout';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Geegpay frontend challenge',

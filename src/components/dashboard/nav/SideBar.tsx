@@ -47,7 +47,11 @@ export const SideBar = () => {
         bg='brandGray.50'
         borderRight='1px solid'
         borderColor='gray.200'
-        _dark={{ bg: '#111', borderRight: '1px solid #3F4753' }}
+        _dark={{
+          bg: '#111',
+          borderRight: '1px solid',
+          borderColor: 'whiteAlpha.400',
+        }}
       >
         <Logo />
 

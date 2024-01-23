@@ -7,7 +7,12 @@ import { LayoutProps } from 'models/shared';
 
 export const DashboardLayout = ({ children }: LayoutProps) => {
   return (
-    <BrandFlex pos='relative' minH='100vh' bg='brandGray.50'>
+    <BrandFlex
+      pos='relative'
+      minH='100vh'
+      bg='brandGray.50'
+      _dark={{ bg: '#111' }}
+    >
       <ProfileBar />
       <SideBar />
 
@@ -17,8 +22,8 @@ export const DashboardLayout = ({ children }: LayoutProps) => {
         flex='1'
         pt='90px'
         pb='12'
-        ml={{ base: '0' }}
-        px={{ base: '2', xl: '0' }}
+        ml={{ base: '0', xl: '70px' }}
+        px={{ base: '2', xl: '5' }}
         alignItems='center'
         zIndex={1}
         overflow='auto'
