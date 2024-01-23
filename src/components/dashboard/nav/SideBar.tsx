@@ -1,10 +1,19 @@
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
+import { Logo } from 'components/shared/Logo';
 import { useDefaultContext } from 'context/DefaultContext';
+import { navItemFooter, navItems } from 'store/data/nav';
 import { DEFAULT_STYLES } from 'styles/globalStyles';
+import { NavItem } from './NavItem';
 
 export const SideBar = () => {
   const { mediaQuery, updateDefaultProps } = useDefaultContext();
+  const renderTopNavItems = navItems.map((item) => (
+    <NavItem key={item.id} {...item} />
+  ));
+  const renderBottomNavItems = navItemFooter.map((item) => (
+    <NavItem key={item.id} {...item} />
+  ));
 
   return (
     <BrandFlex
@@ -29,22 +38,32 @@ export const SideBar = () => {
         height='full'
         position='fixed'
         transition={DEFAULT_STYLES.transition}
-        pb='6'
+        pb='20'
+        pt='4'
+        align='center'
         bg='brandGray.50'
         borderRight='1px solid'
         borderColor='gray.200'
       >
+        <Logo />
+
         <ColumnFlex
           w='100%'
           flex='1'
+          mt='5'
           overflowY='auto'
           overflowX='hidden'
-          mt='8'
           className={DEFAULT_STYLES.hideScroll}
           align='center'
-          alignSelf='center'
-          gap='2'
-        ></ColumnFlex>
+          gap='7'
+          mb='28'
+        >
+          {renderTopNavItems}
+        </ColumnFlex>
+
+        <ColumnFlex w='full' align='center' gap='7'>
+          {renderBottomNavItems}
+        </ColumnFlex>
       </ColumnFlex>
     </BrandFlex>
   );

@@ -1,8 +1,6 @@
 import { ImageModel } from 'models/shared';
 
-export interface NavItemProps extends Partial<ImageModel> {
-  pathname: string;
+export interface NavItemProps extends ImageModel {
   path?: string;
   id: string;
-  children?: NavItemProps[];
 }

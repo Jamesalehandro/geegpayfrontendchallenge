@@ -17,7 +17,7 @@ const NotFound = () => {
       </Text>
 
       <Box width='188px' pt='6'>
-        <Button w='full' size='lgPadding' onClick={back}>
+        <Button w='full' bg='black' onClick={back}>
           Go Back
         </Button>
       </Box>
