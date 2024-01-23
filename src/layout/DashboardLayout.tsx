@@ -1,12 +1,16 @@
 'use client';
-
+import { ProfileBar } from 'components/dashboard/nav/ProfileBar';
+import { SideBar } from 'components/dashboard/nav/SideBar';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
 import { LayoutProps } from 'models/shared';
 
 export const DashboardLayout = ({ children }: LayoutProps) => {
   return (
-    <BrandFlex pos='relative' minH='100vh' bg='brandPurple.20'>
+    <BrandFlex pos='relative' minH='100vh' bg='white.50'>
+      <ProfileBar />
+      <SideBar />
+
       <ColumnFlex
         w='full'
         minH='100vh'
