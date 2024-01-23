@@ -16,6 +16,9 @@ export const textStyles = {
     lineHeight: 1.3,
     fontWeight: 600,
     textTransform: sharedTransform,
+    _dark: {
+      color: 'white',
+    },
   },
   title: {
     fontSize: pxToRem(18),
@@ -46,15 +49,24 @@ export const textStyles = {
     fontSize: pxToRem(12),
     lineHeight: 1.6,
     fontWeight: 400,
+    _dark: {
+      color: 'white',
+    },
   },
   tiny: {
     fontSize: pxToRem(10),
     fontWeight: 400,
     lineHeight: 1.5,
+    _dark: {
+      color: 'white',
+    },
   },
   xs: {
     fontSize: pxToRem(8),
     fontWeight: 400,
     lineHeight: 1.5,
+    _dark: {
+      color: 'white',
+    },
   },
 };

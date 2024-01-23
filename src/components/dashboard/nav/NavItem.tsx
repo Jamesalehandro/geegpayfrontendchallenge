@@ -15,6 +15,7 @@ export const NavItem = ({ img, path }: NavItemProps) => {
         src={img}
         alt=''
         priority
+        quality={100}
         style={{
           cursor: 'pointer',
         }}
