@@ -29,40 +29,23 @@ export const textStyles = {
     lineHeight: 1.3,
     fontWeight: 500,
   },
-  label: {
-    fontSize: '0.75rem',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
   body: {
     fontSize: '1rem',
     fontWeight: 400,
-    lineHeight: 1.5,
-  },
-  boldBody: {
-    fontSize: '1rem',
-    fontWeight: 700,
     lineHeight: 1.5,
   },
   body2: {
     fontSize: pxToRem(14),
     fontWeight: 400,
     lineHeight: 1.5,
-  },
-  boldBody2: {
-    fontSize: pxToRem(14),
-    fontWeight: 700,
-    lineHeight: 1.5,
+    _dark: {
+      color: 'white',
+    },
   },
   desc: {
     fontSize: pxToRem(12),
     lineHeight: 1.6,
     fontWeight: 400,
-  },
-  boldDesc: {
-    fontSize: pxToRem(12),
-    lineHeight: 1.5,
-    fontWeight: 700,
   },
   tiny: {
     fontSize: pxToRem(10),

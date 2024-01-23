@@ -14,7 +14,11 @@ export const DashboardViewClient = () => {
         <Stats />
       </Flex>
 
-      <Flex gap='8' flexDir={{ base: 'column', xl: 'row' }}>
+      <Flex
+        gap='8'
+        flexDir={{ base: 'column', xl: 'row' }}
+        align={{ base: 'stretch', xl: 'flex-start' }}
+      >
         <TableDetails />
         <ListDetails />
       </Flex>

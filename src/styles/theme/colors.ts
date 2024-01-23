@@ -4,6 +4,7 @@ export const colors = {
     100: '#F7F8FA',
   },
   error: {
+    100: '#ED544E',
     200: '#EA4335',
   },
   brandGray: {
