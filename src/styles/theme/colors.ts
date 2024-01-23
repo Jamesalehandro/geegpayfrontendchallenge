@@ -18,6 +18,9 @@ export const colors = {
     800: '#262626',
     900: '#171717',
   },
+  brandGreen: {
+    50: '#34CAA5',
+  },
   brandBlack: {
     50: '#282828',
   },

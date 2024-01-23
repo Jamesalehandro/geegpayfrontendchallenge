@@ -10,6 +10,7 @@ import logout from 'assets/logout.svg';
 import { NavItemProps } from 'models/nav';
 import { nanoid } from 'nanoid';
 import { Routes } from 'utils/routes';
+import { LucideIcon, Sun, MoonStar } from 'lucide-react';
 
 export const navItems: NavItemProps[] = [
   { id: nanoid(12), path: Routes.home, img: dashboard },
@@ -24,4 +25,15 @@ export const navItemFooter: NavItemProps[] = [
   { id: nanoid(12), img: arrow },
   { id: nanoid(12), path: Routes.settings, img: setting },
   { id: nanoid(12), img: logout },
+];
+
+export const colorModeItems: { icon: LucideIcon; value: 'light' | 'dark' }[] = [
+  {
+    icon: Sun,
+    value: 'light',
+  },
+  {
+    icon: MoonStar,
+    value: 'dark',
+  },
 ];

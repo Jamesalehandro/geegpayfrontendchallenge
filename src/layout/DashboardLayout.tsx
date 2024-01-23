@@ -22,6 +22,7 @@ export const DashboardLayout = ({ children }: LayoutProps) => {
         alignItems='center'
         zIndex={1}
         overflow='auto'
+        _dark={{ bg: '#111' }}
       >
         {children}
       </ColumnFlex>

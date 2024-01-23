@@ -5,12 +5,15 @@ import { useDefaultContext } from 'context/DefaultContext';
 import { navItemFooter, navItems } from 'store/data/nav';
 import { DEFAULT_STYLES } from 'styles/globalStyles';
 import { NavItem } from './NavItem';
+import { ToggleColorMode } from '../toggle/ColorModeToggle';
 
 export const SideBar = () => {
   const { mediaQuery, updateDefaultProps } = useDefaultContext();
+
   const renderTopNavItems = navItems.map((item) => (
     <NavItem key={item.id} {...item} />
   ));
+
   const renderBottomNavItems = navItemFooter.map((item) => (
     <NavItem key={item.id} {...item} />
   ));
@@ -44,6 +47,7 @@ export const SideBar = () => {
         bg='brandGray.50'
         borderRight='1px solid'
         borderColor='gray.200'
+        _dark={{ bg: '#111', borderRight: '1px solid #3F4753' }}
       >
         <Logo />
 
@@ -53,15 +57,16 @@ export const SideBar = () => {
           mt='5'
           overflowY='auto'
           overflowX='hidden'
-          className={DEFAULT_STYLES.hideScroll}
           align='center'
           gap='7'
-          mb='28'
+          mb='20'
         >
           {renderTopNavItems}
+
+          <ToggleColorMode />
         </ColumnFlex>
 
-        <ColumnFlex w='full' align='center' gap='7'>
+        <ColumnFlex w='full' align='center' gap='7' mb='10'>
           {renderBottomNavItems}
         </ColumnFlex>
       </ColumnFlex>
