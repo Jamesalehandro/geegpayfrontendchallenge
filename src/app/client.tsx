@@ -9,7 +9,11 @@ import { ListDetails } from 'components/dashboard/ListDetails';
 export const DashboardViewClient = () => {
   return (
     <ColumnFlex w='full' flex='1' gap='8'>
-      <Flex gap='8' flexDirection={{ base: 'column-reverse', xl: 'row' }}>
+      <Flex
+        gap='8'
+        flexDirection={{ base: 'column-reverse', xl: 'row' }}
+        align={{ base: 'stretch', xl: 'flex-start' }}
+      >
         <MainChart />
         <Stats />
       </Flex>
