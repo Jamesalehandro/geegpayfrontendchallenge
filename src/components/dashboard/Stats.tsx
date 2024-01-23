@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import boxTick from 'assets/tickbox.svg';
+import rotate3d from 'assets/rotate3d.svg';
+import shopping from 'assets/shopping.svg';
+import coin from 'assets/coin.svg';
 import { Center, Circle, Grid, Text } from '@chakra-ui/react';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
@@ -22,25 +25,20 @@ export const Stats = () => {
       <StatsCard img={boxTick} isPositive title='350' desc='Total Order' />
 
       <StatsCard
-        img={boxTick}
+        img={rotate3d}
         isPositive={false}
         title='270'
         desc='Total Refund'
       />
 
       <StatsCard
-        img={boxTick}
+        img={shopping}
         isPositive={false}
         title='1567'
         desc='Average Sales'
       />
 
-      <StatsCard
-        img={boxTick}
-        isPositive
-        title='$350.000'
-        desc='Total income'
-      />
+      <StatsCard img={coin} isPositive title='$350.000' desc='Total income' />
     </Grid>
   );
 };
