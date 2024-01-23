@@ -11,18 +11,6 @@ export const textStyles = {
     fontWeight: 700,
     textTransform: sharedTransform,
   },
-  headerAlt: {
-    fontSize: { base: '1.7rem', md: pxToRem(35) },
-    lineHeight: 1.5,
-    fontWeight: 700,
-    textTransform: sharedTransform,
-  },
-  sectionHeader: {
-    fontSize: { base: pxToRem(24), md: pxToRem(32) },
-    lineHeight: 1.3,
-    fontWeight: 600,
-    textTransform: sharedTransform,
-  },
   subHeader: {
     fontSize: { base: pxToRem(20), md: pxToRem(24) },
     lineHeight: 1.3,
@@ -30,10 +18,11 @@ export const textStyles = {
     textTransform: sharedTransform,
   },
   title: {
-    fontSize: { base: pxToRem(18), md: pxToRem(20) },
+    fontSize: pxToRem(18),
     lineHeight: 1.3,
     fontWeight: 600,
-    textTransform: sharedTransform,
+    color: '#26282C',
+    _dark: { color: 'white' },
   },
   subtitle: {
     fontSize: pxToRem(18),

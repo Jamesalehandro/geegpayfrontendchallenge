@@ -16,7 +16,6 @@ export const DashboardViewClient = () => {
 
       <Flex gap='8' flexDir={{ base: 'column', xl: 'row' }}>
         <TableDetails />
-
         <ListDetails />
       </Flex>
     </ColumnFlex>

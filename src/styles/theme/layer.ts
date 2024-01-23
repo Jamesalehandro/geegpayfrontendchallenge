@@ -18,6 +18,7 @@ export const layerStyles = {
     borderRadius: 14,
     border: '1px solid',
     borderColor: '#EDF2F7',
+    p: { base: 2, xl: '4' },
     _dark: {
       border: '1px solid',
       bg: '#111',
