@@ -10,6 +10,10 @@ export const IconBtn = ({ icon, ...rest }: Props) => {
       transition={DEFAULT_STYLES.transition}
       _active={{
         transform: 'scale(0.99)',
+        bg: 'transparent',
+      }}
+      _hover={{
+        bg: 'transparent',
       }}
       bg='transparent'
       size='sm'

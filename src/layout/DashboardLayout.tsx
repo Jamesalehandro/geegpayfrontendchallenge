@@ -20,7 +20,7 @@ export const DashboardLayout = ({ children }: LayoutProps) => {
         w='full'
         minH='100vh'
         flex='1'
-        pt='100px'
+        pt='7.5rem'
         pb='12'
         ml={{ base: '0', xl: '70px' }}
         px={{ base: '2', xl: '5' }}

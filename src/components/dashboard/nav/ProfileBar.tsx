@@ -1,10 +1,28 @@
+import {
+  Circle,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { BrandFlex } from 'components/shared/BrandFlex';
+import { BrandHeading } from 'components/shared/BrandHeading';
 import { useDefaultContext } from 'context/DefaultContext';
 import { useScroll } from 'hooks/useScroll';
+import { textStyles } from 'styles/theme/text';
+import { Bell, CalendarDays, AlignJustify, Search } from 'lucide-react';
+import { IconBtn } from 'components/shared/IconBtn';
+import { UserCard } from '../UserCard';
 
 export function ProfileBar() {
   const scroll = useScroll(20);
   const { updateDefaultProps } = useDefaultContext();
+  const color = useColorModeValue('#0D062D', 'white');
 
   return (
     <BrandFlex
@@ -14,12 +32,13 @@ export function ProfileBar() {
       minH='70px'
       maxH='80px'
       top='0'
-      pl={{ base: '0', xl: '199px' }}
-      px={{ base: '2', xl: '5' }}
-      justify={{ base: 'space-between', xl: 'flex-end' }}
+      justify='space-between'
       shadow={scroll ? '0px 1px 15px 0px #0000000D' : 'none'}
       backdropFilter={scroll ? 'saturate(200%) blur(30px)' : 'none'}
       bg='brandGray.50'
+      pl={{ base: '2', xl: '24' }}
+      pr='2'
+      py='5'
       borderBottom='1px solid'
       borderColor='gray.200'
       _dark={{
@@ -27,9 +46,89 @@ export function ProfileBar() {
         borderBottom: '1px solid',
         borderColor: 'whiteAlpha.400',
       }}
-      onClick={() => {
-        updateDefaultProps(true, 'media');
-      }}
-    ></BrandFlex>
+    >
+      <BrandFlex>
+        <IconBtn
+          icon={<AlignJustify fontSize='25' color='black' />}
+          onClick={() => {
+            updateDefaultProps(true, 'media');
+          }}
+          aria-label='Open Menu'
+          display={{ base: 'inline-block', xl: 'none' }}
+        />
+
+        <BrandHeading {...textStyles.title}>Dashboard</BrandHeading>
+      </BrandFlex>
+
+      <BrandFlex gap='8'>
+        <InputGroup
+          w='349px'
+          rounded='24'
+          bg='white'
+          _dark={{ bg: '#222' }}
+          mr={{ xl: '5' }}
+          display={{ base: 'none', lg: 'inline-block' }}
+        >
+          <InputLeftElement pointerEvents='none' ml='1'>
+            <Search size={16} color='#78828A' />
+          </InputLeftElement>
+          <Input
+            type='text'
+            rounded='24'
+            placeholder='Search...'
+            _placeholder={{
+              color: 'brandGray.400',
+              _dark: { color: 'whiteAlpha.400' },
+              fontSize: '14px',
+            }}
+          />
+        </InputGroup>
+
+        <BrandFlex
+          display={{ base: 'none', md: 'flex' }}
+          gap='8'
+          flexShrink={0}
+        >
+          <BrandFlex gap='2'>
+            <CalendarDays size='20' />
+            <Text
+              textStyle='body2'
+              color='#26282C'
+              _dark={{ color: 'white' }}
+              fontWeight={500}
+            >
+              {new Date().toDateString()}
+            </Text>
+          </BrandFlex>
+
+          <Circle
+            minW='2rem'
+            minH='2rem'
+            border='1px solid'
+            borderColor='#DADDDD'
+            p='1.5'
+            cursor='pointer'
+          >
+            <Bell color={color} size='20' />
+          </Circle>
+        </BrandFlex>
+
+        <Menu>
+          <MenuButton
+            w='max-content'
+            px='2'
+            rounded='28'
+            py='2'
+            bg='transparent'
+            border='1px solid #DADDDD'
+          >
+            <UserCard />
+          </MenuButton>
+          <MenuList>
+            <MenuItem color='red'>Log out</MenuItem>
+          </MenuList>
+        </Menu>
+      </BrandFlex>
+    </BrandFlex>
   );
 }
