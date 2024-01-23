@@ -13,18 +13,18 @@ import { Routes } from 'utils/routes';
 import { LucideIcon, Sun, MoonStar } from 'lucide-react';
 
 export const navItems: NavItemProps[] = [
-  { id: nanoid(12), path: Routes.home, img: dashboard },
-  { id: nanoid(12), path: Routes.trend, img: trend },
-  { id: nanoid(12), path: Routes.profile, img: profile },
-  { id: nanoid(12), path: Routes.box, img: box },
-  { id: nanoid(12), path: Routes.discount, img: discount },
-  { id: nanoid(12), path: Routes.info, img: info },
+  { id: nanoid(12), path: Routes.home, img: dashboard, name: 'dashboard' },
+  { id: nanoid(12), path: Routes.trend, img: trend, name: 'trend' },
+  { id: nanoid(12), path: Routes.profile, img: profile, name: 'profile' },
+  { id: nanoid(12), path: Routes.box, img: box, name: 'box' },
+  { id: nanoid(12), path: Routes.discount, img: discount, name: 'discount' },
+  { id: nanoid(12), path: Routes.info, img: info, name: 'info' },
 ];
 
 export const navItemFooter: NavItemProps[] = [
-  { id: nanoid(12), img: arrow },
-  { id: nanoid(12), path: Routes.settings, img: setting },
-  { id: nanoid(12), img: logout },
+  { id: nanoid(12), img: arrow, name: 'arrow' },
+  { id: nanoid(12), path: Routes.settings, img: setting, name: 'settings' },
+  { id: nanoid(12), img: logout, name: 'logout' },
 ];
 
 export const colorModeItems: { icon: LucideIcon; value: 'light' | 'dark' }[] = [

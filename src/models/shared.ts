@@ -26,6 +26,24 @@ export enum PortalId {
   id = 'portal_div',
 }
 
+export type IconNames =
+  | 'settings'
+  | 'dashboard'
+  | 'logout'
+  | 'trend'
+  | 'profile'
+  | 'box'
+  | 'info'
+  | 'arrow'
+  | 'discount';
+
+export interface CustomIconProps {
+  pathFill?: string;
+  svgFill?: string;
+  width?: string | number;
+  height?: string | number;
+}
+
 export interface ColumnFlexProps extends FlexProps, BoxProps {}
 
 export type TextStyle = keyof typeof textStyles;

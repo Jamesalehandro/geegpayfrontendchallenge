@@ -35,7 +35,16 @@ export const TableDetails = () => {
 
   const renderTableBody = tableBody.map((item) => {
     return (
-      <Tr key={item.id}>
+      <Tr
+        key={item.id}
+        _hover={{
+          backgroundColor: '#1E2F8908',
+          _dark: {
+            backgroundColor: '#000',
+          },
+        }}
+        cursor='pointer'
+      >
         <Td>
           <BrandFlex gap='3'>
             <Image src={item.img} alt={item.username} />
