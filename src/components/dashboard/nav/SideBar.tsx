@@ -30,9 +30,9 @@ export const SideBar = () => {
         position='fixed'
         transition={DEFAULT_STYLES.transition}
         pb='6'
-        bg='white.100'
+        bg='brandGray.50'
         borderRight='1px solid'
-        borderColor='brandGray.50'
+        borderColor='gray.200'
       >
         <ColumnFlex
           w='100%'

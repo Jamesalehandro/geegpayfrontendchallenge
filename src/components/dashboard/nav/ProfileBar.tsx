@@ -19,7 +19,7 @@ export function ProfileBar() {
       justify={{ base: 'space-between', xl: 'flex-end' }}
       shadow={scroll ? '0px 1px 15px 0px #0000000D' : 'none'}
       backdropFilter={scroll ? 'saturate(200%) blur(30px)' : 'none'}
-      bg='white.50'
+      bg='brandGray.50'
       borderBottom='1px solid'
       borderColor='gray.200'
       onClick={() => {

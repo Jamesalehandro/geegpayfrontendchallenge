@@ -1,6 +1,6 @@
 export const colors = {
   white: {
-    50: '#FAFAFA',
+    50: '#EBECF2',
     100: '#F7F8FA',
   },
   error: {

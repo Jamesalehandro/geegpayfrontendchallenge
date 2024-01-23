@@ -7,7 +7,7 @@ import { LayoutProps } from 'models/shared';
 
 export const DashboardLayout = ({ children }: LayoutProps) => {
   return (
-    <BrandFlex pos='relative' minH='100vh' bg='white.50'>
+    <BrandFlex pos='relative' minH='100vh' bg='brandGray.50'>
       <ProfileBar />
       <SideBar />
 
