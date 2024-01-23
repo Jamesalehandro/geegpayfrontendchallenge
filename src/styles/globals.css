@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+::selection {
+  color: #fff;
+  background: rgb(96, 99, 173);
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: rgb(96, 99, 173);
+}
+
+html::-webkit-scrollbar,
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
