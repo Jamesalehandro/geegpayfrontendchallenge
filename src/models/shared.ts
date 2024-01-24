@@ -35,7 +35,8 @@ export type IconNames =
   | 'box'
   | 'info'
   | 'arrow'
-  | 'discount';
+  | 'discount'
+  | 'active';
 
 export interface CustomIconProps {
   pathFill?: string;
