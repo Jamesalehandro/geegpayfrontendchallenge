@@ -20,12 +20,28 @@ import { Bell, CalendarDays, AlignJustify, Search } from 'lucide-react';
 import { IconBtn } from 'components/shared/IconBtn';
 import { UserCard } from '../UserCard';
 import { NavSearchModal } from './NavSearchModal';
+import { useEffect } from 'react';
 
 export function ProfileBar() {
   const scroll = useScroll(20);
   const { updateDefaultProps } = useDefaultContext();
   const color = useColorModeValue('#0D062D', 'white');
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    const handleKeyPress = (e: any) => {
+      if (e.ctrlKey && e.key === 'k') {
+        onOpen();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Empty dep
 
   return (
     <BrandFlex
@@ -84,6 +100,13 @@ export function ProfileBar() {
               color: 'brandGray.400',
               _dark: { color: 'whiteAlpha.400' },
               fontSize: '14px',
+            }}
+            onKeyDown={(e) => {
+              console.log('Ran');
+
+              if (e.ctrlKey && e.key === 'K') {
+                onOpen();
+              }
             }}
             onClick={onOpen}
           />
