@@ -3,9 +3,13 @@ import profileUser from 'assets/profileuser.svg';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
 import { Text, useMediaQuery } from '@chakra-ui/react';
-import { ChevronDownIcon } from 'lucide-react';
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
-export const UserCard = () => {
+interface Props {
+  isExpanded?: boolean;
+}
+
+export const UserCard = ({ isExpanded }: Props) => {
   const [isLessThan768] = useMediaQuery('(max-width: 768px)', {
     ssr: true,
     fallback: false,
@@ -32,7 +36,7 @@ export const UserCard = () => {
         </Text>
       </ColumnFlex>
 
-      <ChevronDownIcon />
+      {isExpanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
     </BrandFlex>
   );
 };

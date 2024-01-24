@@ -127,19 +127,23 @@ export function ProfileBar() {
         </BrandFlex>
 
         <Menu isLazy>
-          <MenuButton
-            w='max-content'
-            px='2'
-            rounded='28'
-            py='2'
-            bg='transparent'
-            border='1px solid #DADDDD'
-          >
-            <UserCard />
-          </MenuButton>
-          <MenuList textStyle='body2'>
-            <MenuItem color='red'>Log out</MenuItem>
-          </MenuList>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                w='max-content'
+                px='2'
+                rounded='28'
+                py='2'
+                bg='transparent'
+                border='1px solid #DADDDD'
+              >
+                <UserCard isExpanded={isOpen} />
+              </MenuButton>
+              <MenuList textStyle='body2'>
+                <MenuItem color='red'>Log out</MenuItem>
+              </MenuList>
+            </>
+          )}
         </Menu>
       </BrandFlex>
     </BrandFlex>
