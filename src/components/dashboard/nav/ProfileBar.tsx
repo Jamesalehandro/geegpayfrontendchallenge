@@ -101,19 +101,32 @@ export function ProfileBar() {
             </Text>
           </BrandFlex>
 
-          <Circle
-            minW='2rem'
-            minH='2rem'
-            border='1px solid'
-            borderColor='#DADDDD'
-            p='1.5'
-            cursor='pointer'
-          >
-            <Bell color={color} size='20' />
-          </Circle>
+          <Menu autoSelect={false} isLazy>
+            <MenuButton
+              w='max-content'
+              px='2'
+              rounded='28'
+              py='2'
+              bg='transparent'
+            >
+              <Circle
+                minW='2rem'
+                minH='2rem'
+                border='1px solid'
+                borderColor='#DADDDD'
+                p='1.5'
+                cursor='pointer'
+              >
+                <Bell color={color} size='20' />
+              </Circle>
+            </MenuButton>
+            <MenuList textStyle='body2'>
+              <MenuItem color='red'>You have no new notification</MenuItem>
+            </MenuList>
+          </Menu>
         </BrandFlex>
 
-        <Menu>
+        <Menu isLazy>
           <MenuButton
             w='max-content'
             px='2'
@@ -124,7 +137,7 @@ export function ProfileBar() {
           >
             <UserCard />
           </MenuButton>
-          <MenuList>
+          <MenuList textStyle='body2'>
             <MenuItem color='red'>Log out</MenuItem>
           </MenuList>
         </Menu>

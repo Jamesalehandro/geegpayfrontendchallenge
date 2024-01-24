@@ -11,13 +11,7 @@ interface Props extends ColumnFlexProps {
 const LoadingComponent = ({ loadingText, textProp, ...r }: Props) => {
   return (
     <ColumnFlex w='full' layerStyle='centered' gap='5' {...r}>
-      <Spinner
-        color='nestColors.500'
-        size='xl'
-        label='Loading...'
-        speed='1s'
-        thickness='3px'
-      />
+      <Spinner size='xl' label='Loading...' speed='1s' thickness='3px' />
 
       {loadingText && (
         <Text textStyle='body2' color='brandGray.600' {...textProp}>
