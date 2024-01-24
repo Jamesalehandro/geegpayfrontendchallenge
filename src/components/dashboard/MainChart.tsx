@@ -11,6 +11,7 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { plusJakarta } from 'styles/fonts';
 
 ChartJS.register(
   ArcElement,
@@ -23,6 +24,35 @@ ChartJS.register(
 );
 
 export const MainChart = () => {
+  const options = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        backgroundColor: '#090C2C',
+        bodyFontFamily: plusJakarta.style.fontFamily,
+        bodyFontSize: 14,
+        bodyFontColor: '#fff',
+        borderColor: 'transparent',
+        borderWidth: 0,
+        cornerRadius: 5,
+        displayColors: false,
+        yAlign: 'bottom' as any,
+        callbacks: {
+          label: (context: any) => {
+            const value = context.parsed.y;
+            return '$' + value.toLocaleString();
+          },
+          title: () => {
+            return '';
+          },
+        },
+      },
+    },
+  };
+
   return (
     <ColumnFlex flex='1' layerStyle='boxed' overflowX='auto'>
       <div>
@@ -47,19 +77,7 @@ export const MainChart = () => {
             ],
             labels: monthsAbbreviations,
           }}
-          options={{
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-              },
-            },
-          }}
+          options={options}
           style={{ width: '100%', maxHeight: '374px', height: '374px' }}
         />
       </div>
