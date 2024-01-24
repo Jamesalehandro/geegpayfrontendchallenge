@@ -9,6 +9,7 @@ import {
   MenuList,
   Text,
   useColorModeValue,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { BrandHeading } from 'components/shared/BrandHeading';
@@ -18,11 +19,13 @@ import { textStyles } from 'styles/theme/text';
 import { Bell, CalendarDays, AlignJustify, Search } from 'lucide-react';
 import { IconBtn } from 'components/shared/IconBtn';
 import { UserCard } from '../UserCard';
+import { NavSearchModal } from './NavSearchModal';
 
 export function ProfileBar() {
   const scroll = useScroll(20);
   const { updateDefaultProps } = useDefaultContext();
   const color = useColorModeValue('#0D062D', 'white');
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <BrandFlex
@@ -49,7 +52,7 @@ export function ProfileBar() {
     >
       <BrandFlex>
         <IconBtn
-          icon={<AlignJustify fontSize='25' color='black' />}
+          icon={<AlignJustify fontSize='25' />}
           onClick={() => {
             updateDefaultProps(true, 'media');
           }}
@@ -74,6 +77,7 @@ export function ProfileBar() {
           </InputLeftElement>
           <Input
             type='text'
+            isReadOnly
             rounded='24'
             placeholder='Search...'
             _placeholder={{
@@ -81,8 +85,11 @@ export function ProfileBar() {
               _dark: { color: 'whiteAlpha.400' },
               fontSize: '14px',
             }}
+            onClick={onOpen}
           />
         </InputGroup>
+
+        <NavSearchModal isOpen={isOpen} onClose={onClose} />
 
         <BrandFlex
           display={{ base: 'none', md: 'flex' }}

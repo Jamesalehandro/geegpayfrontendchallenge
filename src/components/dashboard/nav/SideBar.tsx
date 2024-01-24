@@ -30,14 +30,13 @@ export const SideBar = () => {
         if (e.target.id !== 'side-bar') return;
         updateDefaultProps(false, 'media');
       }}
-      transition={DEFAULT_STYLES.transition}
       transform={{
         base: `translate( ${mediaQuery ? '0%' : '-300%'})`,
         xl: 'translate(0px)',
       }}
     >
       <ColumnFlex
-        w='60px'
+        w={{ base: mediaQuery ? '60px' : '0', xl: '60px' }}
         height='full'
         position='fixed'
         transition={DEFAULT_STYLES.transition}

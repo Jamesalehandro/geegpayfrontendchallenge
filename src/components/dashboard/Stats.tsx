@@ -52,7 +52,7 @@ export const StatsCard = ({ img, title, desc, isPositive }: StatsCardProps) => {
   const color = isPositive ? colors.brandGreen[50] : colors.error['100'];
 
   return (
-    <ColumnFlex layerStyle='boxed' py='5' gap='4'>
+    <ColumnFlex layerStyle='boxed' py='5' gap='4' cursor='pointer'>
       <BrandFlex>
         <Circle
           minW='2rem'
