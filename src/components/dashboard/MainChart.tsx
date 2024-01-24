@@ -70,7 +70,7 @@ export const MainChart = () => {
                   topLeft: 30,
                   topRight: 30,
                 },
-                barThickness: 30,
+                // barThickness: 30,
                 hoverBackgroundColor: '#34CAA5',
                 hoverBorderColor: '#34CAA500',
               },

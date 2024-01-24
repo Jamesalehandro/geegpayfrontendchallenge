@@ -10,11 +10,7 @@
   - [Components](#components)
     - [Shared](#shared)
   - [Design System](#design-system)
-  - [Hooks](#hooks)
-  - [Layout](#layout)
-  - [Models](#models)
   - [Utils](#utils)
-  - [Data](#data)
 
 ## installation
 
