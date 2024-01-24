@@ -101,13 +101,6 @@ export function ProfileBar() {
               _dark: { color: 'whiteAlpha.400' },
               fontSize: '14px',
             }}
-            onKeyDown={(e) => {
-              console.log('Ran');
-
-              if (e.ctrlKey && e.key === 'K') {
-                onOpen();
-              }
-            }}
             onClick={onOpen}
           />
         </InputGroup>
@@ -150,8 +143,20 @@ export function ProfileBar() {
                 <Bell color={color} size='20' />
               </Circle>
             </MenuButton>
-            <MenuList textStyle='body2'>
-              <MenuItem color='red'>You have no new notification</MenuItem>
+            <MenuList
+              textStyle='body2'
+              _dark={{
+                bg: '#222',
+              }}
+            >
+              <MenuItem
+                color='red'
+                _dark={{
+                  bg: 'transparent',
+                }}
+              >
+                You have no new notification
+              </MenuItem>
             </MenuList>
           </Menu>
         </BrandFlex>
@@ -169,8 +174,20 @@ export function ProfileBar() {
               >
                 <UserCard isExpanded={isOpen} />
               </MenuButton>
-              <MenuList textStyle='body2'>
-                <MenuItem color='red'>Log out</MenuItem>
+              <MenuList
+                textStyle='body2'
+                _dark={{
+                  bg: '#222',
+                }}
+              >
+                <MenuItem
+                  color='red'
+                  _dark={{
+                    bg: 'transparent',
+                  }}
+                >
+                  Log out
+                </MenuItem>
               </MenuList>
             </>
           )}

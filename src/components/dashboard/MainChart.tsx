@@ -12,6 +12,11 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { plusJakarta } from 'styles/fonts';
+import { BrandFlex } from 'components/shared/BrandFlex';
+import { BrandHeading } from 'components/shared/BrandHeading';
+import { textStyles } from 'styles/theme/text';
+import { Select, Text } from '@chakra-ui/react';
+import { pxToRem } from 'utils/stylesformatter/pxToRem';
 
 ChartJS.register(
   ArcElement,
@@ -26,6 +31,11 @@ ChartJS.register(
 export const MainChart = () => {
   const options = {
     maintainAspectRatio: false,
+    scales: {
+      y: {
+        suggestedMax: 50000,
+      },
+    },
     plugins: {
       legend: {
         display: false,
@@ -55,6 +65,31 @@ export const MainChart = () => {
 
   return (
     <ColumnFlex flex='1' layerStyle='boxed' overflowX='auto'>
+      <BrandFlex layerStyle='spaced' wrap='wrap'>
+        <BrandHeading {...textStyles.title}>Sales Trends</BrandHeading>
+
+        <BrandFlex gap='2'>
+          <Text color='#3A3F51' textStyle='body2' flexShrink='0'>
+            Sort by:
+          </Text>
+
+          <Select
+            bg='white'
+            size='sm'
+            _dark={{ bg: '#222' }}
+            rounded='24'
+            fontSize={pxToRem(14)}
+            _placeholder={{
+              color: 'brandGray.400',
+              _dark: { color: 'whiteAlpha.400' },
+              fontSize: '14px',
+            }}
+          >
+            <option value='weekly'>Weekly</option>
+          </Select>
+        </BrandFlex>
+      </BrandFlex>
+
       <div>
         <Bar
           data={{
@@ -70,7 +105,6 @@ export const MainChart = () => {
                   topLeft: 30,
                   topRight: 30,
                 },
-                // barThickness: 30,
                 hoverBackgroundColor: '#34CAA5',
                 hoverBorderColor: '#34CAA500',
               },

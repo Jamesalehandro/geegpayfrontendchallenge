@@ -3,6 +3,8 @@ import boxTick from 'assets/tickbox.svg';
 import rotate3d from 'assets/rotate3d.svg';
 import shopping from 'assets/shopping.svg';
 import coin from 'assets/coin.svg';
+import graph from 'assets/graph.svg';
+import redGraph from 'assets/redGraph.svg';
 import { Center, Circle, Grid, Text } from '@chakra-ui/react';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
@@ -53,7 +55,7 @@ export const StatsCard = ({ img, title, desc, isPositive }: StatsCardProps) => {
 
   return (
     <ColumnFlex layerStyle='boxed' py='5' gap='4' cursor='pointer'>
-      <BrandFlex>
+      <BrandFlex layerStyle='spaced'>
         <Circle
           minW='2rem'
           minH='2rem'
@@ -63,6 +65,8 @@ export const StatsCard = ({ img, title, desc, isPositive }: StatsCardProps) => {
         >
           <Image src={img} alt='' priority quality={100} />
         </Circle>
+
+        <Image src={isPositive ? graph : redGraph} alt='' quality={100} />
       </BrandFlex>
 
       <ColumnFlex>
