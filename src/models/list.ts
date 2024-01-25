@@ -5,4 +5,5 @@ export interface ListDetails extends Pick<IProps, 'title'> {
   price: number;
   percentage: number;
   id: string;
+  increase: number;
 }
