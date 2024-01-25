@@ -24,8 +24,8 @@ import { useEffect } from 'react';
 
 export function ProfileBar() {
   const scroll = useScroll(20);
-  const { updateDefaultProps } = useDefaultContext();
   const color = useColorModeValue('#0D062D', 'white');
+  const { updateDefaultProps } = useDefaultContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
@@ -91,6 +91,7 @@ export function ProfileBar() {
           <InputLeftElement pointerEvents='none' ml='1'>
             <Search size={16} color='#78828A' />
           </InputLeftElement>
+
           <Input
             type='text'
             isReadOnly

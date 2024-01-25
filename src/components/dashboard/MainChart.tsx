@@ -15,7 +15,7 @@ import { plusJakarta } from 'styles/fonts';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { BrandHeading } from 'components/shared/BrandHeading';
 import { textStyles } from 'styles/theme/text';
-import { Select, Text } from '@chakra-ui/react';
+import { Select, Text, useMediaQuery } from '@chakra-ui/react';
 import { pxToRem } from 'utils/stylesformatter/pxToRem';
 
 ChartJS.register(
@@ -62,6 +62,7 @@ export const MainChart = () => {
       },
     },
   };
+  const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
 
   return (
     <ColumnFlex flex='1' layerStyle='boxed' overflowX='auto'>
@@ -86,6 +87,7 @@ export const MainChart = () => {
             }}
           >
             <option value='weekly'>Weekly</option>
+            <option value='monthly'>Monthly</option>
           </Select>
         </BrandFlex>
       </BrandFlex>
@@ -107,6 +109,7 @@ export const MainChart = () => {
                 },
                 hoverBackgroundColor: '#34CAA5',
                 hoverBorderColor: '#34CAA500',
+                barThickness: isLargerThan1280 ? 30 : undefined,
               },
             ],
             labels: monthsAbbreviations,
