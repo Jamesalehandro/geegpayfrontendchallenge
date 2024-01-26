@@ -1,5 +1,6 @@
 import {
   Circle,
+  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
@@ -16,7 +17,13 @@ import { BrandHeading } from 'components/shared/BrandHeading';
 import { useDefaultContext } from 'context/DefaultContext';
 import { useScroll } from 'hooks/useScroll';
 import { textStyles } from 'styles/theme/text';
-import { Bell, CalendarDays, AlignJustify, Search } from 'lucide-react';
+import {
+  Bell,
+  CalendarDays,
+  AlignJustify,
+  Search,
+  SearchIcon,
+} from 'lucide-react';
 import { IconBtn } from 'components/shared/IconBtn';
 import { UserCard } from '../UserCard';
 import { NavSearchModal } from './NavSearchModal';
@@ -41,7 +48,7 @@ export function ProfileBar() {
       document.removeEventListener('keydown', handleKeyPress);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Empty dep
+  }, []);
 
   return (
     <BrandFlex
@@ -79,7 +86,22 @@ export function ProfileBar() {
         <BrandHeading {...textStyles.title}>Dashboard</BrandHeading>
       </BrandFlex>
 
-      <BrandFlex gap='8'>
+      <BrandFlex gap={{ base: '3', lg: '8' }}>
+        <IconButton
+          aria-label='Search dashboard'
+          onClick={onOpen}
+          icon={<SearchIcon />}
+          bg='transparent'
+          display={{ lg: 'none' }}
+          _active={{
+            bg: 'transparent',
+            transform: 'scale(0.91)',
+          }}
+          _hover={{
+            bg: 'transparent',
+          }}
+        />
+
         <InputGroup
           w='349px'
           rounded='24'

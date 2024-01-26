@@ -21,9 +21,10 @@ export const NavSearchModal = ({ isOpen, onClose }: NavSearchModalProps) => {
   const color = useColorModeValue('#78828A', colors.brandGreen[50]);
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size={{ base: 'xs', lg: 'md' }}>
       <ModalOverlay />
-      <ModalContent bg='transparent' minH='68px'>
+
+      <ModalContent bg='transparent' minH={{ base: '50px', lg: '68px' }}>
         <ModalBody bg={bg} overflowX='clip' rounded='10'>
           <InputGroup size='lg' w='full'>
             <InputLeftElement pointerEvents='none'>

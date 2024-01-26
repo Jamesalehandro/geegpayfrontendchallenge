@@ -30,7 +30,7 @@ export const listDetails: ListDetails[] = [
     id: nanoid(6),
     color: '#FF4A55',
     percentage: 15,
-    price: 19000000,
+    price: 10000000,
     title: 'X Store',
     increase: 3,
   },
