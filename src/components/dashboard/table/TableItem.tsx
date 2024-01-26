@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Tr, Td, Text, useColorModeValue, Box } from '@chakra-ui/react';
+import { Tr, Td, Text, useColorModeValue, Box, Circle } from '@chakra-ui/react';
 import { BrandFlex } from 'components/shared/BrandFlex';
 import { formatTableColor } from 'utils/color';
 import { StickyNote } from 'lucide-react';
@@ -26,16 +26,21 @@ export const TableItem = ({ item, onClick }: Props) => {
     >
       <Td>
         <BrandFlex gap='3'>
-          <Image
-            src={item.img}
-            alt={item.username}
-            width={32}
-            height={32}
-            blurDataURL={rgbDataURL()}
-            placeholder='blur'
-            aria-label='User image'
-            quality={100}
-          />
+          <Circle pos='relative' minW='32px' minH='32px' overflow='clip'>
+            <Image
+              src={item.img}
+              alt={item.username}
+              fill
+              style={{
+                objectFit: 'cover',
+              }}
+              blurDataURL={rgbDataURL()}
+              placeholder='blur'
+              aria-label='User image'
+              quality={100}
+            />
+          </Circle>
+
           <Text color='#3A3F51' fontWeight={500} textStyle='body2'>
             {item.username}
           </Text>
