@@ -23,7 +23,7 @@ git clone https://github.com/Jamesalehandro/geegpayfrontendchallenge.git
 
 ## package manager
 
-we are using pnpm package manager to avoid conflicts with the lock file
+I am using pnpm package manager to avoid conflicts with the lock file
 
 ### Dependencies
 
