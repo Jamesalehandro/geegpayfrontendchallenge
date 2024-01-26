@@ -5,13 +5,17 @@ import { BrandHeading } from './BrandHeading';
 
 interface SharedTitleProps {
   title: string;
+  onClick?: () => void;
+  isMore: boolean;
 }
 
-export const SharedTitle = ({ title }: SharedTitleProps) => {
+export const SharedTitle = ({ title, onClick, isMore }: SharedTitleProps) => {
   return (
     <BrandFlex layerStyle='spaced'>
       <BrandHeading {...textStyles.title}>{title}</BrandHeading>
-      <Button variant='text'>See all</Button>
+      <Button variant='text' onClick={onClick}>
+        {isMore ? 'See less' : 'See all'}
+      </Button>
     </BrandFlex>
   );
 };

@@ -3,13 +3,16 @@ import { BrandFlex } from 'components/shared/BrandFlex';
 import { BrandHeading } from 'components/shared/BrandHeading';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
 import { SharedTitle } from 'components/shared/SharedTitle';
+import { useState } from 'react';
 import { listDetails } from 'store/data/list';
 import { DEFAULT_STYLES } from 'styles/globalStyles';
 import { textStyles } from 'styles/theme/text';
 import { pxToRem } from 'utils/stylesformatter/pxToRem';
 
 export const ListDetails = () => {
-  const renderPlatforms = listDetails.map((item) => (
+  const [addMore, setAddMore] = useState(false);
+
+  const renderPlatforms = listDetails(addMore).map((item) => (
     <Stack key={item.id}>
       <BrandHeading
         {...textStyles.title}
@@ -37,7 +40,11 @@ export const ListDetails = () => {
 
   return (
     <ColumnFlex w={{ base: 'full', sm: '488px' }} layerStyle='boxed'>
-      <SharedTitle title='Top Platform' />
+      <SharedTitle
+        title='Top Platform'
+        onClick={() => setAddMore(!addMore)}
+        isMore={addMore}
+      />
 
       <Stack flex='1' gap='8'>
         {renderPlatforms}

@@ -4,6 +4,7 @@ import { BrandFlex } from 'components/shared/BrandFlex';
 import { formatTableColor } from 'utils/color';
 import { StickyNote } from 'lucide-react';
 import { TableData } from 'models/table';
+import { rgbDataURL } from 'utils/stylesformatter/blur';
 
 interface Props {
   item: TableData;
@@ -25,7 +26,16 @@ export const TableItem = ({ item, onClick }: Props) => {
     >
       <Td>
         <BrandFlex gap='3'>
-          <Image src={item.img} alt={item.username} />
+          <Image
+            src={item.img}
+            alt={item.username}
+            width={32}
+            height={32}
+            blurDataURL={rgbDataURL()}
+            placeholder='blur'
+            aria-label='User image'
+            quality={100}
+          />
           <Text color='#3A3F51' fontWeight={500} textStyle='body2'>
             {item.username}
           </Text>

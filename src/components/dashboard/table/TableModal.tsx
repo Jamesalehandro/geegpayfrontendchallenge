@@ -10,10 +10,13 @@ import { formatTableColor } from 'utils/color';
 interface Props {
   id?: string;
   onClose: () => void;
+  isMore: boolean;
 }
 
-export const TableModal = ({ id, onClose }: Props) => {
-  const transaction = tableBody.find((item) => item.id === id);
+export const TableModal = ({ id, onClose, isMore }: Props) => {
+  const transaction = tableBody(isMore).find((item) => item.id === id);
+  console.log(transaction);
+
   const show = !!transaction;
 
   return (

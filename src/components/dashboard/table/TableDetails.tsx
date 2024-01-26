@@ -8,6 +8,7 @@ import { TableItem } from './TableItem';
 
 export const TableDetails = () => {
   const [id, setId] = useState<string>();
+  const [addMore, setAddMore] = useState(false);
 
   const toggleModal = (id?: string) => {
     setId(id);
@@ -27,7 +28,7 @@ export const TableDetails = () => {
     );
   });
 
-  const renderTableBody = tableBody.map((item) => {
+  const renderTableBody = tableBody(addMore).map((item) => {
     return (
       <TableItem
         key={item.id}
@@ -39,7 +40,11 @@ export const TableDetails = () => {
 
   return (
     <ColumnFlex minH='374px' flex='1' layerStyle='boxed'>
-      <SharedTitle title='Last Orders' />
+      <SharedTitle
+        title='Last Orders'
+        isMore={addMore}
+        onClick={() => setAddMore(!addMore)}
+      />
 
       <TableContainer>
         <Table variant='simple'>
@@ -51,7 +56,7 @@ export const TableDetails = () => {
         </Table>
       </TableContainer>
 
-      <TableModal id={id} onClose={toggleModal} />
+      <TableModal id={id} onClose={toggleModal} isMore={addMore} />
     </ColumnFlex>
   );
 };
