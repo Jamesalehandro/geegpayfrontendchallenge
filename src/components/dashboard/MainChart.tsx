@@ -69,7 +69,7 @@ export const MainChart = () => {
       },
     },
   };
-  const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
 
   const [filterKey, setFilterKey] = useState<FilterKeys>('weekly');
 
@@ -122,7 +122,7 @@ export const MainChart = () => {
                 },
                 hoverBackgroundColor: '#34CAA5',
                 hoverBorderColor: '#34CAA500',
-                barThickness: isLargerThan1280 ? 30 : undefined,
+                barThickness: isLargerThan768 ? 30 : undefined,
               },
             ],
             labels: randomLabelData[filterKey],
