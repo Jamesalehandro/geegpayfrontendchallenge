@@ -1,5 +1,10 @@
 import { ColumnFlex } from 'components/shared/ColumnFlex';
-import { monthsAbbreviations } from 'store/data/chart';
+import {
+  FilterKeys,
+  filterKeys,
+  monthsAbbreviations,
+  randomData,
+} from 'store/data/chart';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,6 +22,8 @@ import { BrandHeading } from 'components/shared/BrandHeading';
 import { textStyles } from 'styles/theme/text';
 import { Select, Text, useMediaQuery } from '@chakra-ui/react';
 import { pxToRem } from 'utils/stylesformatter/pxToRem';
+import { capitalize } from 'utils/text';
+import { useState } from 'react';
 
 ChartJS.register(
   ArcElement,
@@ -64,6 +71,14 @@ export const MainChart = () => {
   };
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
 
+  const [filterKey, setFilterKey] = useState<FilterKeys>('daily');
+
+  const renderOptions = filterKeys.map((item) => (
+    <option value={item} key={item}>
+      {capitalize(item)}
+    </option>
+  ));
+
   return (
     <ColumnFlex flex='1' layerStyle='boxed' overflowX='auto'>
       <BrandFlex layerStyle='spaced' wrap='wrap'>
@@ -85,9 +100,10 @@ export const MainChart = () => {
               _dark: { color: 'whiteAlpha.400' },
               fontSize: '14px',
             }}
+            value={filterKey}
+            onChange={(e) => setFilterKey(e.target.value as FilterKeys)}
           >
-            <option value='weekly'>Weekly</option>
-            <option value='monthly'>Monthly</option>
+            {renderOptions}
           </Select>
         </BrandFlex>
       </BrandFlex>
@@ -97,10 +113,7 @@ export const MainChart = () => {
           data={{
             datasets: [
               {
-                data: [
-                  4500, 5000, 5000, 15000, 25000, 45000, 20000, 35000, 30000,
-                  25000, 20000, 34400,
-                ],
+                data: randomData[filterKey],
                 borderWidth: 0,
                 backgroundColor: Array(12).fill('#34CAA51A'),
                 borderRadius: {

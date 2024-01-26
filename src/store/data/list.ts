@@ -26,4 +26,12 @@ export const listDetails: ListDetails[] = [
     title: 'Toy Troop',
     increase: 8,
   },
+  {
+    id: nanoid(6),
+    color: '#FF4A55',
+    percentage: 15,
+    price: 19000000,
+    title: 'X Store',
+    increase: 3,
+  },
 ];
