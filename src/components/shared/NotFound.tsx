@@ -20,7 +20,20 @@ const NotFound = () => {
       </Text>
 
       <Box width='188px' pt='6'>
-        <Button w='full' bg='black' color='white' onClick={back}>
+        <Button
+          w='full'
+          bg='black'
+          color='white'
+          _dark={{
+            bg: 'white',
+            color: 'black',
+          }}
+          onClick={back}
+          _hover={{
+            bg: 'black',
+            opacity: 0.7,
+          }}
+        >
           Go Back
         </Button>
       </Box>

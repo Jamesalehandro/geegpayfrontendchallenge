@@ -40,13 +40,6 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     h: pxToRem(48),
     fontWeight: 500,
     fontSize: pxToRem(16),
-    _hover: {
-      opacity: 0.8,
-      _disabled: {
-        opacity: 0.8,
-        bg: 'gray.300',
-      },
-    },
   },
 
   sizes: { l, xl, xxl },
