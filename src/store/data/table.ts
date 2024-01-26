@@ -16,6 +16,8 @@ export const tableBody: TableData[] = [
     img: frame1,
     status: 'paid',
     username: 'Marcus Bergson',
+    email: 'vahoube@pik.tn',
+    ref: 'f594b2e6-9caa-576f-8e59-1f1b1e181b35',
   },
   {
     amount: 150000,
@@ -24,6 +26,8 @@ export const tableBody: TableData[] = [
     img: frame2,
     status: 'refund',
     username: 'Jaydon Vaccaro',
+    email: 'simare@lu.kr',
+    ref: 'd302c2c3-4818-5fa5-bc11-8c5d3b4a9704',
   },
   {
     amount: 87000,
@@ -32,6 +36,8 @@ export const tableBody: TableData[] = [
     img: frame3,
     status: 'paid',
     username: 'Corey Schleifer',
+    email: 'sujsepu@utaudahis.mv',
+    ref: '5d96c987-20cd-5915-9268-098d60ff3c2e',
   },
   {
     amount: 100000,
@@ -40,6 +46,8 @@ export const tableBody: TableData[] = [
     img: frame4,
     status: 'refund',
     username: 'Cooper Press',
+    email: 'kakoj@kafkazeb.hk',
+    ref: 'e915c039-9807-573f-bb86-73a640d65965',
   },
   {
     amount: 78000,
@@ -48,5 +56,7 @@ export const tableBody: TableData[] = [
     img: frame5,
     status: 'paid',
     username: 'Philip Lubin',
+    email: 'hakgaoko@inu.io',
+    ref: '66517e35-83e9-5bf7-bce7-f921bd703eb5',
   },
 ];

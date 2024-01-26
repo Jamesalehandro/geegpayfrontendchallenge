@@ -5,3 +5,6 @@ export const addSuffixes = (
   suffixes: string = 's',
   alt?: string
 ) => (length > 1 ? suffixes : alt ?? '');
+
+export const truncateText = (str: string, n: number) =>
+  str.length > n ? `${str.trim().substring(0, n)}...` : `${str.trim()}`;

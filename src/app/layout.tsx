@@ -18,6 +18,8 @@ export default function RootLayout({
   return (
     <html lang='en' className={plusJakarta.className}>
       <body className={plusJakarta.className}>
+        <div id='portal' />
+
         <Provider>
           <DashboardLayout>{children}</DashboardLayout>
         </Provider>

@@ -3,7 +3,7 @@ import { Flex } from '@chakra-ui/react';
 import { Stats } from 'components/dashboard/Stats';
 import { MainChart } from 'components/dashboard/MainChart';
 import { ColumnFlex } from 'components/shared/ColumnFlex';
-import { TableDetails } from 'components/dashboard/TableDetails';
+import { TableDetails } from 'components/dashboard/table/TableDetails';
 import { ListDetails } from 'components/dashboard/ListDetails';
 
 export const DashboardViewClient = () => {
