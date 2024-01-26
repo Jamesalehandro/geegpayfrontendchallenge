@@ -2,8 +2,8 @@ import { ColumnFlex } from 'components/shared/ColumnFlex';
 import {
   FilterKeys,
   filterKeys,
-  monthsAbbreviations,
   randomData,
+  randomLabelData,
 } from 'store/data/chart';
 import {
   Chart as ChartJS,
@@ -71,7 +71,7 @@ export const MainChart = () => {
   };
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
 
-  const [filterKey, setFilterKey] = useState<FilterKeys>('daily');
+  const [filterKey, setFilterKey] = useState<FilterKeys>('weekly');
 
   const renderOptions = filterKeys.map((item) => (
     <option value={item} key={item}>
@@ -125,7 +125,7 @@ export const MainChart = () => {
                 barThickness: isLargerThan1280 ? 30 : undefined,
               },
             ],
-            labels: monthsAbbreviations,
+            labels: randomLabelData[filterKey],
           }}
           options={options}
           style={{ width: '100%', maxHeight: '374px', height: '374px' }}
